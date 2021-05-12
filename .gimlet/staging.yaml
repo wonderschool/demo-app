@@ -10,3 +10,6 @@ deploy:
   tag: v*
 values:
   replicas: 1
+  image:
+    repository: myapp
+    tag: { .GITHUB_SHA }
