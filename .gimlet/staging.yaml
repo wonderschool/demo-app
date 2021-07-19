@@ -1,6 +1,6 @@
 app: myapp
 env: staging
-namespace: my-team
+namespace: gimlet-demo-staging
 chart:
   repository: https://chart.onechart.dev
   name: onechart

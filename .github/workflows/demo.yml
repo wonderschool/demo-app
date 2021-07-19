@@ -21,11 +21,11 @@ jobs:
       uses: actions/checkout@v1
       with:
         fetch-depth: 1
-    - name: Demo
-      id: demo
+    - name: Ship artifact
+      id: ship
       uses: gimlet-io/gimlet-artifact-shipper-action@v0.3.13
       env:
         GIMLET_SERVER: ${{ secrets.GIMLET_SERVER }}
         GIMLET_TOKEN: ${{ secrets.GIMLET_TOKEN }}
     - name: Artifact ID
-      run: echo "Artifact ID is ${{ steps.demo.outputs.artifact-id }}"
+      run: echo "Artifact ID is ${{ steps.ship.outputs.artifact-id }}"
