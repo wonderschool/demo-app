@@ -4,7 +4,7 @@ namespace: my-team
 chart:
   repository: https://chart.onechart.dev
   name: onechart
-  version: 0.20.0
+  version: 0.24.0
 deploy:
   event: tag
   tag: v*
@@ -13,3 +13,5 @@ values:
   image:
     repository: myapp
     tag: "{{ .GITHUB_SHA }}"
+  gitRepository: laszlocph/gimletd-test-repo
+  gitSha: "{{ .GITHUB_SHA }}"
