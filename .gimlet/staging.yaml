@@ -11,7 +11,7 @@ deploy:
 values:
   replicas: 1
   image:
-    repository: myapp
-    tag: "{{ .GITHUB_SHA }}"
+    repository: ghcr.io/podtato-head/podtatoserver
+    tag: "v0.1.1"
   gitRepository: laszlocph/gimletd-test-repo
   gitSha: "{{ .GITHUB_SHA }}"
