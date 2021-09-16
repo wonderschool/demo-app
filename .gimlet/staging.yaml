@@ -2,7 +2,7 @@ app: myapp
 env: staging
 namespace: gimlet-demo-staging
 chart:
-  name: git@github.com:laszlocph/onechart.git?branch=master&path=/charts/onechart/
+  name: https://github.com/laszlocph/onechart.git?branch=master&path=/charts/onechart/
 deploy:
   event: tag
   tag: v*
