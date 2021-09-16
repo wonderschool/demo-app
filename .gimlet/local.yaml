@@ -2,7 +2,7 @@ app: myapp
 env: local
 namespace: default
 chart:
-  name: git@github.com:laszlocph/onechart.git?branch=main&path=/charts/onechart/
+  name: https://github.com/laszlocph/onechart.git?branch=master&path=/charts/onechart/
 values:
   replicas: 3
   image:
