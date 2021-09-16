@@ -3,6 +3,7 @@
 HASH=$(git log -1 --format=%H)
 DATE=$(git log -1 --format=%cI)
 MESSAGE=$(git log -1 --format=%s)
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
 rm artifact.json
 
@@ -11,7 +12,7 @@ gimlet artifact create \
 --repository "laszlocph/gimletd-test-repo" \
 --sha "$HASH" \
 --created "$DATE" \
---branch "main" \
+--branch "$BRANCH" \
 --event "push" \
 --authorName "Laszlo Fogas" \
 --authorEmail "laszlo@laszlo.cloud" \
@@ -29,6 +30,6 @@ do
     fi
 done
 
-gimlet artifact add -f artifact.json --var SHA=$HASH
+gimlet artifact add -f artifact.json --var GITHUB_SHA=$HASH --var GITHUB_BRANCH=$BRANCH
 
 # gimlet artifact push -f artifact.json
