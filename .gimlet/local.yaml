@@ -2,9 +2,7 @@ app: myapp
 env: local
 namespace: default
 chart:
-  repository: https://chart.onechart.dev
-  name: onechart
-  version: 0.24.0
+  name: git@github.com:laszlocph/onechart.git?branch=main&path=/charts/onechart/
 values:
   replicas: 3
   image:
