@@ -2,7 +2,9 @@ app: myapp
 env: staging
 namespace: gimlet-demo-staging
 chart:
-  name: https://github.com/laszlocph/onechart.git?branch=master&path=/charts/onechart/
+  repository: https://chart.onechart.dev
+  name: onechart
+  version: 0.31.0
 deploy:
   event: tag
   tag: v*
