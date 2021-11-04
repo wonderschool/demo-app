@@ -15,3 +15,5 @@ values:
     tag: "v0.1.1"
   gitRepository: laszlocph/gimletd-test-repo
   gitSha: "{{ .GITHUB_SHA }}"
+  podAnnotations:
+    testing: "{{ .url }}"
