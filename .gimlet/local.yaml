@@ -1,0 +1,16 @@
+app: myapp
+env: local
+namespace: default
+chart:
+  repository: https://chart.onechart.dev
+  name: onechart
+  version: 0.32.0
+values:
+  replicas: 1
+  image:
+    repository: ghcr.io/podtato-head/podtatoserver
+    tag: "v0.1.1"
+  gitRepository: laszlocph/gimletd-test-repo
+  gitSha: "{{ .GITHUB_SHA }}"
+  podAnnotations:
+    testing: "{{ .url }}"
