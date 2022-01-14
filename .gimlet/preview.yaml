@@ -16,5 +16,5 @@ values:
   image:
     repository: ghcr.io/podtato-head/podtatoserver
     tag: "v0.1.1"
-  gitRepository: laszlocph/gimletd-test-repo
+  gitRepository: gimlet-io/test-app
   gitSha: "{{ .GITHUB_SHA }}"
