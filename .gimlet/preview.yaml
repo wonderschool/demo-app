@@ -1,0 +1,20 @@
+app: myapp-{{ .GITHUB_BRANCH | sanitizeDNSName }}
+env: preview
+namespace: preview
+chart:
+  repository: https://chart.onechart.dev
+  name: onechart
+  version: 0.32.0
+deploy:
+  event: pr
+cleanup:
+  branch: "!main"
+  event: branchDeleted
+  app: myapp-{{ .BRANCH | sanitizeDNSName }}
+values:
+  replicas: 1
+  image:
+    repository: ghcr.io/podtato-head/podtatoserver
+    tag: "v0.1.1"
+  gitRepository: gimlet-io/test-app
+  gitSha: "{{ .GITHUB_SHA }}"
