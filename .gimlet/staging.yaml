@@ -11,7 +11,7 @@ values:
   image:
     repository: ghcr.io/podtato-head/podtatoserver
     tag: v0.1.1
-  replicas: 2
+  replicas: 3
 strategicMergePatches: ""
 json6902Patches: []
 manifests: ""
