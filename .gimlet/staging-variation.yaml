@@ -6,11 +6,14 @@ chart:
   name: onechart
   version: 0.32.0
 values:
-  replicas: 1
+  gitRepository: gimlet-io/test-app
+  gitSha: '{{ .GITHUB_SHA }}'
   image:
     repository: ghcr.io/podtato-head/podtatoserver
-    tag: "v0.1.1"
-  gitRepository: gimlet-io/test-app
-  gitSha: "{{ .GITHUB_SHA }}"
+    tag: v0.1.1
   vars:
-    MY_ENV: "This is a value"
+    MY_ENV: This is a value
+    another: HELLO
+strategicMergePatches: ""
+json6902Patches: []
+manifests: ""
