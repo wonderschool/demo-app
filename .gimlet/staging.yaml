@@ -1,6 +1,6 @@
 app: myapp
 env: staging
-namespace: staging3
+namespace: staging
 chart:
   repository: https://chart.onechart.dev
   name: onechart
