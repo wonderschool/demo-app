@@ -9,7 +9,7 @@ rm artifact.json
 
 echo "Creating artifact.."
 gimlet artifact create \
---repository "laszlocph/gimletd-test-repo" \
+--repository "gimlet-io/test-app" \
 --sha "$HASH" \
 --created "$DATE" \
 --branch "$BRANCH" \
