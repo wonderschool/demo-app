@@ -1,16 +1,16 @@
-app: myapp-{{ .GITHUB_BRANCH | sanitizeDNSName }}
+app: test-app-{{ .GITHUB_BRANCH | sanitizeDNSName }}
 env: preview
 namespace: preview
 deploy:
   event: pr
 cleanup:
-  app: myapp-{{ .BRANCH | sanitizeDNSName }}
+  app: test-app-{{ .BRANCH | sanitizeDNSName }}
   event: branchDeleted
   branch: '!main'
 chart:
   repository: https://chart.onechart.dev
   name: onechart
-  version: 0.32.0
+  version: 0.36.0
 values:
   gitRepository: gimlet-io/test-app
   gitSha: '{{ .GITHUB_SHA }}'
