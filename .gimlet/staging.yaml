@@ -11,6 +11,11 @@ values:
   image:
     repository: ghcr.io/podtato-head/podtatoserver
     tag: v0.1.1
+  ingress:
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt
+    host: test-app.staging.gimlet.io
+    tlsEnabled: true
   replicas: 4
 strategicMergePatches: ""
 json6902Patches: []
