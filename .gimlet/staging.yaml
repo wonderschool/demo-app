@@ -6,6 +6,7 @@ chart:
   name: onechart
   version: 0.36.0
 values:
+  containerPort: 9000
   gitRepository: gimlet-io/test-app
   gitSha: '{{ .GITHUB_SHA }}'
   image:
@@ -16,7 +17,7 @@ values:
       cert-manager.io/cluster-issuer: letsencrypt
     host: test-app.staging.gimlet.io
     tlsEnabled: true
-  replicas: 4
+  replicas: 2
 strategicMergePatches: ""
 json6902Patches: []
 manifests: ""
