@@ -1,1 +1,1 @@
-FROM ghcr.io/podtato-head/podtatoserver
+FROM ghcr.io/podtato-head/podtatoserver:v0.1.1
