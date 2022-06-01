@@ -1,4 +1,4 @@
-app: test-app-meetup
+app: test-app
 env: meetup
 namespace: default
 chart:
