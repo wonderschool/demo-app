@@ -1,0 +1,26 @@
+app: test-app-meetup
+env: meetup
+namespace: default
+chart:
+  repository: https://chart.onechart.dev
+  name: onechart
+  version: 0.32.0
+values:
+  containerPort: 9000
+  gitRepository: laszlocph/test-app
+  gitSha: '{{ .GITHUB_SHA }}'
+  image:
+    repository: ghcr.io/laszlocph/test-app
+    tag: '{{ .GITHUB_SHA }}'
+  ingress:
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt
+      kubernetes.io/ingress.class: nginx
+    host: test-app-meetup.meetup.turbopizza.net
+    tlsEnabled: true
+  replicas: 4
+  vars:
+    DUMMY: just messing around
+strategicMergePatches: ""
+json6902Patches: []
+manifests: ""
