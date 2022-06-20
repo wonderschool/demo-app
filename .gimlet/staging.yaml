@@ -12,19 +12,20 @@ values:
   image:
     repository: ghcr.io/gimlet-io/test-app
     tag: '{{ .GITHUB_SHA }}'
-  resources:
-    requests:
-      cpu: "50m"
-      memory: "20Mi"
-    limits:
-      cpu: "50m"
-      memory: "50Mi"
   ingress:
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt
       kubernetes.io/ingress.class: nginx
     host: test-app.staging.turbopizza.net
     tlsEnabled: true
+  replicas: 2
+  resources:
+    limits:
+      cpu: 50m
+      memory: 50Mi
+    requests:
+      cpu: 50m
+      memory: 20Mi
 strategicMergePatches: ""
 json6902Patches: []
 manifests: ""
