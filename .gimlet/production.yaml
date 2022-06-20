@@ -12,6 +12,13 @@ values:
   image:
     repository: ghcr.io/gimlet-io/test-app
     tag: '{{ .GITHUB_SHA }}'
+  resources:
+    requests:
+      cpu: "50m"
+      memory: "20Mi"
+    limits:
+      cpu: "50m"
+      memory: "50Mi"
   ingress:
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt
