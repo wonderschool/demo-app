@@ -1,0 +1,14 @@
+app: test-app-adding12
+env: staging
+namespace: default
+chart:
+  repository: https://chart.onechart.dev
+  name: onechart
+  version: 0.38.0
+values:
+  gitRepository: gimlet-io/test-app
+  gitSha: '{{ .GITHUB_SHA }}'
+  replicas: 12
+strategicMergePatches: ""
+json6902Patches: []
+manifests: ""
