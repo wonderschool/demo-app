@@ -8,6 +8,7 @@ chart:
 values:
   gitRepository: gimlet-io/test-app
   gitSha: '{{ .GITHUB_SHA }}'
+  replicas: 6
 strategicMergePatches: ""
 json6902Patches: []
 manifests: ""
