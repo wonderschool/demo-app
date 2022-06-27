@@ -9,6 +9,9 @@ values:
   gitRepository: gimlet-io/test-app
   gitSha: '{{ .GITHUB_SHA }}'
   replicas: 11
+  resources:
+    limits:
+      cpu: 201m
   vars:
     DUMMY: dummy value
 strategicMergePatches: ""
