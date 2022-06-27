@@ -9,6 +9,9 @@ values:
   gitRepository: gimlet-io/test-app
   gitSha: '{{ .GITHUB_SHA }}'
   replicas: 10
+  resources:
+    limits:
+      cpu: 201m
 strategicMergePatches: ""
 json6902Patches: []
 manifests: ""
