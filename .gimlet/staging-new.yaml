@@ -22,6 +22,9 @@ values:
   resources:
     limits:
       memory: 201Mi
+    requests:
+      cpu: 10m
+      memory: 10Mi
 strategicMergePatches: ""
 json6902Patches: []
 manifests: ""
