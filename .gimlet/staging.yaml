@@ -18,7 +18,6 @@ values:
       kubernetes.io/ingress.class: nginx
     host: test-app.staging.turbopizza.net
     tlsEnabled: true
-  replicas: 0
   resources:
     limits:
       cpu: 50m
