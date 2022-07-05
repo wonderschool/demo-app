@@ -21,7 +21,11 @@ values:
   replicas: 4
   resources:
     limits:
-      memory: 201Mi
+      cpu: 50m
+      memory: 50Mi
+    requests:
+      cpu: 10m
+      memory: 10Mi
 strategicMergePatches: ""
 json6902Patches: []
 manifests: ""
