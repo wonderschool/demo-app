@@ -20,9 +20,8 @@ values:
     tlsEnabled: true
   replicas: 4
   resources:
-    requests:
-      cpu: 50m
-      memory: 20Mi
+    limits:
+      memory: 201Mi
 strategicMergePatches: ""
 json6902Patches: []
 manifests: ""
