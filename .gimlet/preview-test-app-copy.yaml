@@ -16,7 +16,7 @@ values:
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt
       kubernetes.io/ingress.class: nginx
-    host: test-app.production.turbopizza.net
+    host: test-app.preview.turbopizza.net
     tlsEnabled: true
   resources:
     limits:
