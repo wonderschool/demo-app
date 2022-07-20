@@ -8,10 +8,10 @@ chart:
 values:
   containerPort: 9000
   gitRepository: gimlet-io/test-app
-  gitSha: '{{ .GITHUB_SHA }}'
+  gitSha: '{{ .SHA }}'
   image:
     repository: ghcr.io/gimlet-io/test-app
-    tag: '{{ .GITHUB_SHA }}'
+    tag: '{{ .SHA }}'
   ingress:
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt
