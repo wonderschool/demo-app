@@ -1,0 +1,13 @@
+app: demo-app
+env: iscaleit
+namespace: default
+chart:
+  repository: https://chart.onechart.dev
+  name: onechart
+  version: 0.38.0
+values:
+  gitRepository: gimlet-io/demo-app
+  gitSha: '{{ .GITHUB_SHA }}'
+strategicMergePatches: ""
+json6902Patches: []
+manifests: ""
