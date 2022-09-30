@@ -18,6 +18,10 @@ values:
     host: demo-app.staging.turbopizza.net
     tlsEnabled: true
   replicas: 2
+  resources:
+    requests:
+      cpu: 20m
+      memory: 20Mi
   vars:
     newKey: New Value
 strategicMergePatches: ""
