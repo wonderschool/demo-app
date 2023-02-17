@@ -1,0 +1,15 @@
+app: demo-app
+env: dev
+namespace: default
+chart:
+  repository: https://chart.onechart.dev
+  name: onechart
+  version: 0.38.0
+values:
+  gitRepository: wonderschool/demo-app
+  gitSha: '{{ .GITHUB_SHA }}'
+  ingress:
+    host: demo-app.wonderschool.dev
+strategicMergePatches: ""
+json6902Patches: []
+manifests: ""
