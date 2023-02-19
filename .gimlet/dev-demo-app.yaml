@@ -10,6 +10,7 @@ values:
   gitSha: '{{ .GITHUB_SHA }}'
   ingress:
     host: demo-app.wonderschool.dev
+    tlsEnabled: true
 strategicMergePatches: ""
 json6902Patches: []
 manifests: ""
