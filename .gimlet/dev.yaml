@@ -9,8 +9,12 @@ chart:
   name: onechart
   version: 0.38.0
 values:
-  gitRepository: wonderschool/demo-app
-  gitSha: '{{ .GITHUB_SHA }}'
+  image:
+    repository: "ghcr.io/wonderschool/demo-app"
+    tag: "{{ .GITHUB_SHA }}"
+  imagePullSecrets:
+    - name: dockerconfigjson-github-com
+  containerPort: 9000
   ingress:
     annotations:
       kubernetes.io/ingress.class: nginx
