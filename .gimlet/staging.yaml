@@ -1,0 +1,26 @@
+app: demo-app
+env: staging
+namespace: default
+deploy:
+  branch: main
+  event: push
+chart:
+  repository: https://chart.onechart.dev
+  name: onechart
+  version: 0.38.0
+values:
+  image:
+    repository: "ghcr.io/wonderschool/demo-app"
+    tag: "{{ .GITHUB_SHA }}"
+  imagePullSecrets:
+    - name: dockerconfigjson-github-com
+  containerPort: 9000
+  ingress:
+    annotations:
+      kubernetes.io/ingress.class: nginx
+      cert-manager.io/cluster-issuer: letsencrypt
+    host: demo-app.wonderschool.dev
+    tlsEnabled: true
+strategicMergePatches: ""
+json6902Patches: []
+manifests: ""
