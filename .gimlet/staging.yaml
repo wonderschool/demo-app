@@ -25,7 +25,6 @@ values:
     - host: demo-app.wonderschool.dev
       annotations:
         kubernetes.io/ingress.class: nginx
-      tlsEnabled: true
     - host: demo-app.onepreschool.com
       annotations:
         kubernetes.io/ingress.class: nginx
