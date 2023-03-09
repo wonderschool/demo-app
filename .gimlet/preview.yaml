@@ -1,5 +1,5 @@
 app: demo-app-{{ .BRANCH | sanitizeDNSName }}
-env: dev
+env: staging
 namespace: default
 deploy:
   branch: feature/*
