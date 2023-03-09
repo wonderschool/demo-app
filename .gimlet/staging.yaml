@@ -15,12 +15,20 @@ values:
   imagePullSecrets:
     - name: dockerconfigjson-github-com
   containerPort: 9000
-  ingress:
-    annotations:
-      kubernetes.io/ingress.class: nginx
-      cert-manager.io/cluster-issuer: letsencrypt
-    host: demo-app.wonderschool.dev
-    tlsEnabled: true
+  # ingress:
+  #   annotations:
+  #     kubernetes.io/ingress.class: nginx
+  #     cert-manager.io/cluster-issuer: letsencrypt
+  #   host: demo-app.wonderschool.dev
+  #   tlsEnabled: true
+  ingresses:
+    - host: demo-app.wonderschool.dev
+      annotations:
+        kubernetes.io/ingress.class: nginx
+      tlsEnabled: true
+    - host: demo-app.onepreschool.com
+      annotations:
+        kubernetes.io/ingress.class: nginx
 strategicMergePatches: ""
 json6902Patches: []
 manifests: ""
