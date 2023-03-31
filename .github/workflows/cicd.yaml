@@ -30,7 +30,7 @@ jobs:
   deploy:
     name: Docker Build/Push/Release
     runs-on: ubuntu-latest
-    if: github.event.pull_request.draft == false || github.event.pull_request.merged == true
+    if: github.event_name == 'pull_request' && (github.event.pull_request.draft == false || github.event.pull_request.merged == true)
     needs:
       - build
     steps:
