@@ -1,11 +1,13 @@
-name: CI/CD Open Pull Request
+name: CI/CD
 
 on:
+  push:
   pull_request:
     branches:
       - 'main'
     types:
       - opened
+      - closed
       - synchronize
       - reopened
       - ready_for_review
@@ -28,7 +30,7 @@ jobs:
   deploy:
     name: Docker Build/Push/Release
     runs-on: ubuntu-latest
-    if: github.event.pull_request.draft == false
+    if: github.event.pull_request.draft == false || github.event.pull_request.merged == true
     needs:
       - build
     steps:
