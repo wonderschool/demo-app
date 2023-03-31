@@ -4,10 +4,6 @@ on:
     branches:
       - '*'
 
-  pull_request:
-    branches:
-      - 'main'
-
 jobs:
   build:
     name: 👷 Build
@@ -26,7 +22,7 @@ jobs:
   deploy:
     name: Docker Build/Push/Release
     runs-on: ubuntu-latest
-    if: github.ref_name == 'main' || (github.event_name == 'pull_request' && github.base_ref == 'main')
+    if: github.ref_name == 'main' || startsWith(github.ref_name, 'MP-')
     needs:
       - build
     steps:
