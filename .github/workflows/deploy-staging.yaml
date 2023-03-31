@@ -1,4 +1,4 @@
-name: Deploy Staging App
+name: CI/CD Merged Pull Request
 
 on:
   pull_request:
@@ -8,10 +8,26 @@ on:
       - 'closed'
 
 jobs:
+  build:
+    name: 👷 Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🛑 Cancel Previous Runs
+      uses: styfle/cancel-workflow-action@0.9.1
+      with:
+        access_token: ${{ secrets.GITHUB_TOKEN }}
+    - name: ⬇️ Check out
+      uses: actions/checkout@v1
+      with:
+        fetch-depth: 1
+    - name: Run tests
+      run: echo "running tests..."
   deploy:
     name: Docker Build/Push/Release
     runs-on: ubuntu-latest
     if: github.event.pull_request.merged == true
+    needs:
+      - build
     steps:
     - name: 🛑 Cancel Previous Runs
       uses: styfle/cancel-workflow-action@0.9.1
