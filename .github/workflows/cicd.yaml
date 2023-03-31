@@ -2,7 +2,7 @@ name: CICD
 on:
   push:
     branches:
-      - 'main'
+      - '*'
 
   pull_request:
     branches:
@@ -26,6 +26,7 @@ jobs:
   deploy:
     name: Docker Build/Push/Release
     runs-on: ubuntu-latest
+    if: github.ref_name == 'master' || (github.event_name == 'pull_request' && github.base_ref == 'master')
     needs:
       - build
     steps:
