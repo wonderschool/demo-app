@@ -22,7 +22,7 @@ jobs:
       with:
         fetch-depth: 1
     - name: Run tests
-        run: echo "running tests..."
+      run: echo "running tests..."
   deploy:
     name: Docker Build/Push/Release
     runs-on: ubuntu-latest
