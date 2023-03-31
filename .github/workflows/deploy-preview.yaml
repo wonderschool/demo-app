@@ -10,8 +10,6 @@ jobs:
     name: Docker Build/Push/Release
     runs-on: ubuntu-latest
     if: github.event.pull_request.draft == false
-    needs:
-      - build
     steps:
     - name: 🛑 Cancel Previous Runs
       uses: styfle/cancel-workflow-action@0.9.1
