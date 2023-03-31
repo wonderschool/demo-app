@@ -2,10 +2,8 @@ app: demo-app-{{ .BRANCH | sanitizeDNSName }}
 env: staging
 namespace: default
 deploy:
-  branch: feature/*
   event: pr
 cleanup:
-  branch: feature/*
   event: branchDeleted
   app: demo-app-{{ .BRANCH | sanitizeDNSName }}
 chart:

@@ -1,32 +1,15 @@
-name: CICD
-on:
-  push:
-    branches:
-      - '*'
+name: Deploy Preview App
 
+on:
   pull_request:
     branches:
       - 'main'
 
 jobs:
-  build:
-    name: 👷 Build
-    runs-on: ubuntu-latest
-    steps:
-    - name: 🛑 Cancel Previous Runs
-      uses: styfle/cancel-workflow-action@0.9.1
-      with:
-        access_token: ${{ secrets.GITHUB_TOKEN }}
-    - name: ⬇️ Check out
-      uses: actions/checkout@v1
-      with:
-        fetch-depth: 1
-    - name: Run tests
-      run: echo "running tests..."
   deploy:
     name: Docker Build/Push/Release
     runs-on: ubuntu-latest
-    if: github.ref_name == 'main' || (github.event_name == 'pull_request' && github.base_ref == 'main')
+    if: github.event.pull_request.draft == false
     needs:
       - build
     steps:
