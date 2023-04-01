@@ -1,12 +1,12 @@
 name: CI/CD
 
 on:
-  push:
   pull_request:
     branches:
       - 'main'
     types:
       - opened
+      - closed
       - synchronize
       - reopened
       - ready_for_review
@@ -29,7 +29,7 @@ jobs:
   deploy:
     name: Docker Build/Push/Release
     runs-on: ubuntu-latest
-    if: (github.event_name == 'push' && github.ref_name == 'main') || (github.event_name == 'pull_request' && github.event.pull_request.draft == false)
+    if: github.event_name == 'pull_request' && (github.event.pull_request.draft == false || github.event.pull_request.merged == true)
     needs:
       - build
     steps:
