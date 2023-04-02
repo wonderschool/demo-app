@@ -3,7 +3,7 @@ env: staging
 namespace: default
 deploy:
   branch: main
-  event: pr
+  event: push
 chart:
   repository: https://chart.onechart.dev
   name: onechart
