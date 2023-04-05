@@ -13,7 +13,7 @@ values:
     repository: "ghcr.io/wonderschool/demo-app"
     tag: "{{ .GITHUB_SHA }}"
   imagePullSecrets:
-    - name: dockerconfigjson-github-com
+    - name: ghcr-dockerconfigjson
   containerPort: 9000
   ingresses:
     - host: demo-app.wonderschool.com
